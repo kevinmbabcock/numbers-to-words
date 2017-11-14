@@ -11,10 +11,14 @@ describe('number_to_words') do
     expect(number_to_words(1)).to(eq("one"))
   end
   it("display the correct number from the tens place") do
-    expect(number_to_words(99)).to(eq("ninety-nine"))
+    expect(number_to_words(99)).to(eq("ninety nine"))
   end
   it("display eleven for 11") do
     expect(number_to_words(15)).to(eq("fifteen"))
+  end
+
+  it ("display the correct number from the hundreds place") do
+    expect(number_to_words(124)).to(eq("one hundred twenty four"))
   end
 
 end
