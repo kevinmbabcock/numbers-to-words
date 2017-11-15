@@ -1,12 +1,34 @@
 def number_to_words(number)
-  ones = Hash.new
-  ones = {1 => "one", 2 => "two", 3=>"three", 4=>"four", 5=>"five", 6=>"six", 7=>"seven", 8=>"eight", 9=>"nine"}
+  ones = Hash.new()
+  ones = {1 => "one", 2 => "two", 3=>"three", 4=>"four", 5=>"five", 6=>"six", 7=>"seven", 8=>"eight", 9=>"nine", 10=>"ten"}
 
   tens = Hash.new
-  tens ={1 => "teen", 2 => "twenty", 3=>"thirty", 4=>"forty", 5=>"fifty", 6=>"sixty", 7=>"seventy", 8=>"eighty", 9=>"ninety"}
+  tens ={1 => "teen ", 2 => "twenty ", 3=>"thirty ", 4=>"forty ", 5=>"fifty ", 6=>"sixty ", 7=>"seventy ", 8=>"eighty ", 9=>"ninety "}
 
   hundreds = Hash.new
-  hundreds = {1 => "one hundred", 2 => "two hundred", 3=>"three hundred", 4=>"four hundred", 5=>"five hundred", 6=>"six hundred", 7=>"seven hundred", 8=>"eight hundred", 9=>"nine hundred"}
+  hundreds = {1 => "one hundred ", 2 => "two hundred ", 3=>"three hundred ", 4=>"four hundred ", 5=>"five hundred ", 6=>"six hundred ", 7=>"seven hundred ", 8=>"eight hundred ", 9=>"nine hundred "}
+
+  if (number % 10000 > 9000)
+    thousands_place = ones.fetch(9)
+  elsif (number % 10000 > 8000)
+    thousands_place = ones.fetch(8)
+  elsif (number % 10000 > 7000)
+    thousands_place = ones.fetch(7)
+  elsif (number % 10000 > 6000)
+    thousands_place = ones.fetch(6)
+  elsif (number % 10000 > 5000)
+    thousands_place = ones.fetch(5)
+  elsif (number % 10000 > 4000)
+    thousands_place = ones.fetch(4)
+  elsif (number % 10000 > 3000)
+    thousands_place = ones.fetch(3)
+  elsif (number % 10000 > 2000)
+    thousands_place = ones.fetch(2)
+  elsif (number % 10000 > 1000)
+    thousands_place = ones.fetch(1)
+  else
+    thousands_place = ""
+  end
 
   if (number % 1000 > 900)
     hundreds_place = hundreds.fetch(9)
@@ -74,28 +96,36 @@ def number_to_words(number)
     ones_place = ""
   end
 
-  if (tens_place == "teen")
+  if (tens_place == "teen ")
     if (ones_place == "one")
       ones_place = "eleven"
-      tens_place = ""
     elsif (ones_place == "two")
       ones_place = "twelve"
-      tens_place = ""
     elsif (ones_place == "three")
       ones_place = "thirteen"
-      tens_place = ""
+    elsif (ones_place == "four")
+        ones_place = "fourteen"
     elsif (ones_place == "five")
       ones_place = "fifteen"
-      tens_place = ""
+    elsif (ones_place == "six")
+      ones_place = "sixteen"
+    elsif (ones_place == "seven")
+      ones_place = "seventeen"
+    elsif (ones_place == "eight")
+      ones_place = "eightteen"
+    elsif (ones_place == "nine")
+      ones_place = "nineteen"
     end
-
+    tens_place = ""
   end
 
-  if (hundreds_place != "")
-    return "#{hundreds_place} #{tens_place} #{ones_place}"
+  if (thousands_place != "")
+    "#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
+  elsif (hundreds_place != "")
+    "#{hundreds_place}#{tens_place}#{ones_place}"
   elsif (tens_place != "")
-    return "#{tens_place} #{ones_place}"
+    "#{tens_place}#{ones_place}"
   else
-    return ones_place
+    ones_place
   end
 end
