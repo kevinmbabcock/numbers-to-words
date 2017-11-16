@@ -24,4 +24,10 @@ describe('number_to_words') do
   it ("display only the ones and thousands place if nothing in tens and hundreds") do
     expect(number_to_words(2001)).to(eq("two thousand one"))
   end
+  it ("display only the ones and hundreds place if nothing in tens") do
+    expect(number_to_words(201)).to(eq("two hundred one"))
+  end
+  it ("display only the ones and hundreds place if nothing in tens") do
+    expect(number_to_words(22571)).to(eq("twenty two thousand five hundred seventy one"))
+  end
 end
