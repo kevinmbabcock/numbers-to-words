@@ -115,21 +115,21 @@ def number_to_words(number)
   end
 
   if (trillions_place != "")
-
+    "#{trillions_place} trillion #{hundred_billions_place}#{ten_billions_place}#{billions_place} billion #{hundred_millions_place}#{ten_millions_place}#{millions_place} million #{hundred_thousands_place}#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (hundred_billions_place != "")
-
+    "#{hundred_billions_place}#{ten_billions_place}#{billions_place} billion #{hundred_millions_place}#{ten_millions_place}#{millions_place} million #{hundred_thousands_place}#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (ten_billions_place != "")
-
+    "#{ten_billions_place}#{billions_place} billion #{hundred_millions_place}#{ten_millions_place}#{millions_place} million #{hundred_thousands_place}#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (billions_place != "")
-
+    "#{billions_place} billion #{hundred_millions_place}#{ten_millions_place}#{millions_place} million #{hundred_thousands_place}#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (hundred_millions_place != "")
-
+    "#{hundred_millions_place}#{ten_millions_place}#{millions_place} million #{hundred_thousands_place}#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (ten_millions_place != "")
-
+    "#{ten_millions_place}#{millions_place} million #{hundred_thousands_place}#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (millions_place != "")
-
+    "#{millions_place} million #{hundred_thousands_place}#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (hundred_thousands_place != "")
-
+    "#{hundred_thousands_place}#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (ten_thousands_place != "")
     "#{ten_thousands_place}#{thousands_place} thousand #{hundreds_place}#{tens_place}#{ones_place}"
   elsif (thousands_place != "")
